@@ -4,17 +4,17 @@
       <h2>Data Access</h2>
   </header>
 
-<p>The unWISE data are accessible by a variety of means:</p>
+<p>The DELVE DR1 data are accessible by a variety of means:</p>
 
 <p>
 <b>Data Lab Table Access Protocol (TAP) service</b>
-<p>TAP provides a convenient access layer to the unWISE catalog database.
+<p>TAP provides a convenient access layer to the DELVE DR1 catalog database.
 TAP-aware clients (such as <a
 href="http://www.star.bris.ac.uk/~mbt/topcat/">TOPCAT</a>) can point to
-<i>http://datalab.noao.edu/tap</i>, select the <i>unwise_dr1</i> database, and
-see the database tables and descriptions.  <i>unwise_dr1</i> contains a
-table named <i>object</i>, which is described in the Data Lab 
-<a href="https://datalab.noao.edu/query.php?name=unwise_dr1.object">table browser</a>.</p>
+<i>http://datalab.noao.edu/tap</i>, select the <i>delve_dr1</i> database, and
+see the database tables and descriptions.  <i>delve_dr1</i> contains a
+table named <i>objects</i>, which is described in the Data Lab 
+<a href="https://datalab.noao.edu/query.php?name=delve_dr1.objects">table browser</a>.</p>
 
 <p>
 <b>Data Lab Query Manager</b>
@@ -28,19 +28,14 @@ through the Data Lab VOSpace.</p>
 
 <p>
 <b>Image Cutouts</b>
-<p>Image cutouts can be retrieved from the Legacy Survey Sky Viewer following this notation: </p>
-  <p> FITS: <a href="http://legacysurvey.org/viewer/fits-cutout/?ra=218.3643&dec=52.8691&layer=unwise-neo4&pixscale=32.00">http://legacysurvey.org/viewer/fits-cutout/?ra=218.3643&dec=52.8691&layer=unwise-neo4&pixscale=32.00 </a> <br><br>
-  JPEG: <a href="http://legacysurvey.org/viewer/jpeg-cutout/?ra=218.3643&dec=52.8691&layer=unwise-neo4&pixscale=32.00"> http://legacysurvey.org/viewer/jpeg-cutout/?ra=218.3643&dec=52.8691&layer=unwise-neo4&pixscale=32.00 </a> </p>
-
+<p>
+The Data Lab Simple Image Access (SIA) service provides a fast way to retrieve cutouts fromDELVE images. For an example of how to use the SIA service, see this Jupyter notebook.
+</p>
 <p> 
 <b>Jupyter Notebook Server</b>
 <p>The Data Lab <a href="http://datalab.noao.edu/devbooks">Jupyter Notebook
   server</a> (user authenticated service) contains examples of how to access
-  and visualize the unWISE catalog under
-  <i>03_ScienceExamples/SpectralEnergyDistributions/</i> with the notebook
-  <i>MidInfraredPhotometry_unWISEdr1_AllWISE.ipynb</i>.</p>
-  <p>The notebook is also
-    <a href="https://github.com/noaodatalab/notebooks-latest/blob/master/03_ScienceExamples/SpectralEnergyDistributions/MidInfraredPhotometry_unWISEdr1_AllWISE.ipynb">on GitHub</a>
-    with the rest of the Data Lab notebook collection.</p>
+  and visualize the DELVE DR1 catalog.
+</p>
 
 </article>
