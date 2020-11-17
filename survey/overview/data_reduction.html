@@ -12,7 +12,7 @@ Valdes et al. 2014</a>),
 (2) <a href="https://www.astromatic.net/software/sextractor">Source Extractor</a>
 (<a href="http://adsabs.harvard.edu/abs/1996A%26AS..117..393B">Bertin &amp; Arnouts 1996</a>) for performing
 source extraction from the images, and (3)
-<a href="https://github.com/dnidever/noaosourcecatalog">custom software</a> (in python and IDL)
+<a href="https://github.com/noaodatalab/noaosourcecatalog">custom software</a> (in python and IDL)
 to run SExtractor on the images and to perform calibration and combination.
 
 <ul>
@@ -29,24 +29,41 @@ to run SExtractor on the images and to perform calibration and combination.
       In the future, we plan to perform PSF photometry on individual exposures and stacked images.
     </li>
     <li><b>Calibration</b>.
+
       The zero-point for each exposure was obtained by using publicly available catalogs.  For
-      grizY exposures above -30 degrees declination the <a href="https://panstarrs.stsci.edu">Pan-STARRS1 DR1</a>
-      catalog was used.  For the rest of the exposures, model magnitudes were constructed from
-      <a href="https://www.cosmos.esa.int/web/gaia/dr1">Gaia DR1</a>,
-      <a href="https://www.ipac.caltech.edu/2mass/">2MASS</a>,
-      <a href="http://www.galex.caltech.edu/about/overview.html">GALEX</a>, and
-      <a href="https://www.aavso.org/apass">APASS</a> and an extinction term using the
-      <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel, Finkbeiner &amp; David (1998)</a> reddening map.
-      The astrometry of each chip was calibrated using the Gaia DR1 catalog.
+      grizY exposures above -29 degrees declination the <a href="https://panstarrs.stsci.edu">Pan-STARRS1 DR1</a>
+      catalog was used. For the soutern exposures in griz bands, zeropoints were derived using
+      <a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...867..105T/abstract">ATLAS-Refcat2</a> stars. For
+      u-band exposures below 0 degree declination, zeropoints were derived using
+      <a href="http://skymapper.anu.edu.au/data-release/dr1/">Skymapper DR1</a>.  VR-band exposures were calibrated
+      using the average of the r-band (PS1 in the north and ATLAS-Refcat2 in the south) and
+      <a href="https://www.cosmos.esa.int/web/gaia/dr2">Gaia DR2</a> G magnitudes.  Finally, model magnitudes
+      were used for u-band exposures with positive declinations using
+      <a href="http://www.galex.caltech.edu/about/overview.html">GALEX</a>, Gaia DR2 and
+      <a href="https://www.ipac.caltech.edu/2mass/">2MASS</a> photometry, and for Y-band exposures with
+      declinations below -29 deg using 2MASS photometry.  Extinction values to construct dereddened colors
+      were calculated using the <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel, Finkbeiner &amp; David (1998)</a>
+      reddening map and RJCE method (Rayleigh-Jeans Color Excess,
+      <a href="https://ui.adsabs.harvard.edu/abs/2011ApJ...739...25M/abstract">Majewski et al. 2011</a>), using
+      2MASS, <a href="http://www.astro.wisc.edu/sirtf/">Spitzer</a> and
+      <a href="https://wise2.ipac.caltech.edu/docs/release/allwise/">WISE</a> infrared photometry, in higher extinction regions.
+																			
+      The astrometry of each chip (the WCS) was calibrated using the Gaia DR2 catalog and corrections for proper motion to the
+      epoch of the observation.
     </li>
     <li><b>Combination</b>.
       Quality cuts were used to remove exposures with poor seeing, bad zero-points, large spatial
       variations in the zero-point, or poor astrometric calibration.  Furthermore, quality cuts were
       also applied to the individual source meaurements that were affected by bad pixels,
       truncated at the edge, or had low signal-to-noise (S/N&lt;5).  Finally, measurements from multiple
-      overlapping exposures were combined on a healpix (nside=128) pixel basis.  Sources were crossmatched
-      and their average magnitudes and morphological parameters (in each band) were computed.  Finally, proper motions
-      and the photometric variability in each band were also calculated.
+      overlapping exposures were combined on a <a href="https://healpix.jpl.nasa.gov/">HEALPix</a> (nside=128) pixel basis.
+      The grouping algorithm of measurements into objects was substantially upgraded in DR2 to better handle faster moving
+      stars and more robustly measure proper motions.  First, the NSC DR2 measurements in a single HEALPix were clustered
+      using <a href="https://en.wikipedia.org/wiki/DBSCAN">DBSCAN</a> with a clustering distance of 0.4 seconds to create
+      object "seeds".  Second, any remaining measurements
+      were crossmatched to the seeds using a radius of three times their astrometric uncertainty.  The second step is needed
+      because DBSCAN does not take positional uncertainties into account.  Average magnitudes and morphological
+      parameters (in each band), proper motions, and photometric variability metrics were then computed for each object.
     </li>
 </ul>
 

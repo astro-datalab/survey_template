@@ -3,37 +3,33 @@
 
 <a name="Data Release"></a>
 <header>
-    <h2>First Data Release (DR1)</h2>
+    <h2>Second Data Release (DR2)</h2>
 </header>
-The figure below shows the density of the 2.9 billion objects in the NSC DR1 catalog covering ~30,000 square degrees.
-There are 34 billion measurements from 255 thousand exposures.  Access and exploration tools include the Data Lab
+The figure below shows the density of the 3.9 billion objects in the NSC DR2 catalog covering ~35,000 square degrees.
+There are 68 billion measurements from 412 thousand exposures.  Access and exploration tools include the Data Lab
 <a href="http://datalab.noao.edu/discovery.php">Data Discovery tool</a>, database access to the catalog (via
 direct query or TAP service), an image cutout service, and a Jupyter notebook server with
 <a href="analysis.php">example notebooks</a> for exploratory analysis.
 
-There are six NSC DR1 tables in the database:
+There are five NSC DR2 tables in the database:
 <ul>
     <li><b>Coverage</b>.
       Coverage information for each nside=4096 healpix pixel with a resolution of ~1 arcmin.  This gives coverage
-      fraction and depth for each band.  201,326,592 rows.
+      fraction and depth for each band.  172,157,952 rows.
     </li>
     <li><b>Chip</b>.
-        Information for each unique chip image with astrometric correction terms and uncertainties. 12,008,634 rows.
+        Information for each unique chip image with astrometric correction terms and uncertainties. 24,416,997 rows.
     </li>
     <li><b>Exposure</b>.
-        Information for each unique exposure with zero-point values and uncertainties. 255,454 rows.
+        Information for each unique exposure with zero-point values and uncertainties. 412,116 rows.
     </li>
     <li><b>Object</b>.
-        Information on each unique object with average photometric and astrometric values. 2,930,644,736 rows.
-    </li>
-    <li><b>Crossmatch</b>.
-      Crossmatch information between the NSC and other large catalogs. <br>
+        Information on each unique object with average photometric and astrometric values. 3,932,838,064 rows.
     </li>
     <li><b>Measurement</b>.
-      Information on each individual source measurement. 34,658,213,888 rows.<br>
-      <font color="red">This table will be available as soon as is feasible.</font>
+      Information on each individual source measurement. 67,822,619,019 rows.
     </li>
 </ul>
 
-<center><b>NSC DR1 Object Density Map</b></center>
+<center><b>NSC DR2 Object Density Map</b></center>
 <span class="image featured"><img src="../img/nsc_nobjects.jpg" alt=""/></span>
