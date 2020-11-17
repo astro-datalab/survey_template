@@ -1,11 +1,11 @@
 <div class="row">
 <section class="image-links 4u 6u(narrower) 12u$(mobilep)">
     <p>
-        <a href="http://www.noao.edu/"><img src="http://www.noao.edu/meetings/m31/img/noao-logo.png" alt="NOAO" width="60"></a>
+        <a href="http://www.noao.edu/"><img src="http://www.noao.edu/meetings/m../img/noao-logo.png" alt="NOAO" width="60"></a>
 
-        <a href="http://www.aura-astronomy.org/"><img src="http://www.noao.edu/meetings/m31/img/aura-logo.png" alt="AURA"></a>
+        <a href="http://www.aura-astronomy.org/"><img src="http://www.noao.edu/meetings/m../img/aura-logo.png" alt="AURA"></a>
 
-        <a href="http://www.nsf.gov/"><img src="http://www.noao.edu/meetings/m31/img/nsf-logo.png" alt="NSF"></a>
+        <a href="http://www.nsf.gov/"><img src="http://www.noao.edu/meetings/m../img/nsf-logo.png" alt="NSF"></a>
     </p>
     <p>
         <a href="https://github.com/noao-datalab"><img src="../img/GitHub-Mark.png" alt="github" width="55"></a>

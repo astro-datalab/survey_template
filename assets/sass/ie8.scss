@@ -15,17 +15,17 @@
 	input[type="email"],
 	textarea {
 		position: relative;
-		-ms-behavior: url('assets/js/ie/PIE.htc');
+		-ms-behavior: url('../assets/js/ie/PIE.htc');
 	}
 
 /* Image */
 
 	.image {
-		-ms-behavior: url('assets/js/ie/PIE.htc');
+		-ms-behavior: url('../assets/js/ie/PIE.htc');
 
 		img {
 			position: relative;
-			-ms-behavior: url('assets/js/ie/PIE.htc');
+			-ms-behavior: url('../assets/js/ie/PIE.htc');
 		}
 	}
 
@@ -34,7 +34,7 @@
 	.icon {
 		&.major {
 			position: relative;
-			-ms-behavior: url('assets/js/ie/PIE.htc');
+			-ms-behavior: url('../assets/js/ie/PIE.htc');
 		}
 	}
 
@@ -45,7 +45,7 @@
 	input[type="button"],
 	.button {
 		position: relative;
-		-ms-behavior: url('assets/js/ie/PIE.htc');
+		-ms-behavior: url('../assets/js/ie/PIE.htc');
 	}
 
 /* Box */
@@ -61,13 +61,13 @@
 /* Dropotron */
 
 	.dropotron {
-		-ms-behavior: url('assets/js/ie/PIE.htc');
+		-ms-behavior: url('../assets/js/ie/PIE.htc');
 	}
 
 /* Banner */
 
 	#banner {
-		-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
+		-ms-behavior: url('../assets/js/ie/backgroundsize.min.htc');
 	}
 
 /* Wrapper */

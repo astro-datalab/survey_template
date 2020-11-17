@@ -21,9 +21,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <!--  Load elements of the template page.
     -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
     <script>
-        $(function () {
-            $("#header").load("../inc/custom-header.inc");
+        $(document).ready(function () {
+            $("#header").load("file://////../inc/custom-header.inc");
             $("#sidebar").load("sidebar.html");
             $("#description").load("overview/description.html");
             $("#goals").load("overview/goals.html");

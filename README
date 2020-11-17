@@ -1,16 +1,22 @@
-1. Open Chrome and install Web Server extension here: https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en
-2. Launch the app and choose the folder from your computer for the web server by clicking the button 'CHOOSE FOLDER'
-3. Use any editor to change the files and view the changes on http://127.0.0.1:8887/survey/index.php.
-3. Do not change the file names.
+1. Open Chrome from the command line:
+   on Mac: open -a "Google Chrome" --args --allow-file-access-from-file
+   on Windows: <path to your chrome installation>\chrome.exe --allow-file-access-from-files'
+   on Linux:
+   1) Go to the menu entry/ launcher for Chrome (.desktop file).
+   2) Open the launcher properties dialog.
+   3) It should look something like this: /usr/bin/google-chrome %U
+      Change it to /usr/bin/google-chrome --allow-access-from-files to make the flags work permanently.
+   4) You may also need to delete and re-pin your launcher(s) after modifying it. Chrome should launch with the specified flags enabled after the modification.
+2. Open the file from Chrome browser.
 4. Create a new branch using the survey name.
-5. The template contains six pages: 'index.php', 'access.php', 'analysis.php', 'explore.php', 'results.php', and 'acknowledgements.php'; each page have a corresponding folder with the same name. You only need to change the content page in the corresponding folder.
+5. The template contains six pages: 'index.html', 'access.html', 'analysis.html', 'explore.html', 'results.html', and 'acknowledgements.html'; each page have a corresponding folder with the same name. You only need to change the content page in the corresponding folder.
 6. If you don't want any of these five pages, just delete it from sidebar.html.
    (For example, if you don't want results page, just delete:
     "<section>
-        <h3><a href="results.php">Results</a></h3>
+        <h3><a href="results.html">Results</a></h3>
     </section>"
     from "sidebar.html" page.
-7. Within 'index.php' page, there are five sections: 'Description', 'Goals', 'Data Release', 'Data Reduction', 'table_1'. If you don't want any of these sections, for example, if you don't want 'Data Reduction', just delete:
+7. Within 'index.html' page, there are five sections: 'Description', 'Goals', 'Data Release', 'Data Reduction', 'table_1'. If you don't want any of these sections, for example, if you don't want 'Data Reduction', just delete:
 
     <div id="reduction">
     </div>
