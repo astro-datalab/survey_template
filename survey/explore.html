@@ -6,7 +6,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 -->
 <html>
 <head>
-    <title>NOAO Data Lab - Survey Data</title>
+    <title>NOIRLab Astro Data Lab - Survey Data</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--[if lte IE 8]>
@@ -49,22 +49,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                         <div id="explore"></div>
 
-                        <div class="row 200%">
-                            <div class="10u  12u(narrower) important(narrower)">
-                                <div id='aladin-lite-div' class="aladin-container" style='width: 100%; height:803px;'></div>
-                                <div id='measure-table'></div>
-                            </div>
-                            <div class="2u 12u(narrower)">
-                                <nav id="discovery_nav">
-                                    <ul>
-                                        <li class="discovery_option image_discovery"><a>NOAO Exposure Data</a></li>
-                                        <li class="discovery_option catalog_discovery"><a>Discover Smash Data</a></li>
-                                        <li class="discovery_option des_discovery active"><a>Discover DES Data</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -75,161 +59,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
         </div>
     </div>
-    <!-- Scripts -->
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/jquery.dropotron.min.js"></script>
-    <script src="../assets/js/skel.min.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <!--[if lte IE 8]>
-    <script src="../assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="../assets/js/main.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="../assets/js/aladin.min.js"></script>
-    <script>
-        var aladin = A.aladin('#aladin-lite-div', {cooFrame: 'J2000', target: 'LMC', survey: 'P/Mellinger/color',fov:'180'});
-        aladin.setOverlayImageLayer(HpxImageSurvey.getSurveyFromId('DESDR1'));
-        aladin.getOverlayImageLayer('DESDR1').setAlpha(0.5);
-        $('.des-slider-control').show();
-        $("#desSlider").slider('value', aladin.getOverlayImageLayer('DESDR1').alpha * 100);
-        $("#desOpacity").html("50%");
-        $('#measure-table')[0].appendChild($('.aladin-measurement-div')[0]);
-        var version = 'des';
-        $(".discovery_option").click(function () {
-            $(".discovery_option").removeClass("active");
-            $(this).addClass("active");
-        });
-        $(".image_discovery").click(function () {
-            aladin.removeOverlayImageSurveys();
-            aladin.setBaseImageLayer('NOAO/ExposureMap');
-            aladin.setFov(60);
-            aladin.setFrame('J2000');
-            aladin.gotoObject('LMC');
-            aladin.getBaseImageLayer().getColorMap().update('rainbow');
-            if ($('.aladin-cmSelection').length == 1) {
-                $('.aladin-cmSelection')[0].options.selectedIndex = 4;
-            }
-            version = 'NOAO_exposure';
-            if ($('#displayMay').length == 1) {
-                $('#displayMay')[0].checked = 0;
-            }
-            if ($('#displayMell').length == 1) {
-                $('#displayMell')[0].checked = 0;
-            }
-            if ($('#displayDes').length == 1) {
-                $('#displayDes')[0].checked = 0;
-            }
-            if ($('#displaySmash').length == 1) {
-                $('#displaySmash')[0].checked = 0;
-            }
-            if ($('#displayMayCat').length == 1) {
-                $('#displayMayCat')[0].checked = 0;
-            }
-            if ($('#displaySmashCat').length == 1) {
-                $('#displaySmashCat')[0].checked = 0;
-            }
-            $('.slider-control').hide();
-            $('.smash-slider-control').hide();
-            $('.may-slider-control').hide();
-            $('.des-slider-control').hide();
-            /*        $('.smash_version').hide();
-             $('.des_version').hide();
-             $('.slider-control').hide();
-             $('.NOAO_exposure').show();*/
-            aladin.view.catalogs =[];
-            $('.aladin-measurement-div').empty();
-            $('.aladin-measurement-div').hide();
-        });
-        $(".catalog_discovery").click(function () {
-            aladin.removeOverlayImageSurveys();
-            aladin.setBaseImageLayer('P/Mellinger/color');
-            aladin.getBaseImageLayer().getColorMap().update('native');
-            if ($('.aladin-cmSelection').length == 1) {
-                $('.aladin-cmSelection')[0].options.selectedIndex = 0;
-            }
-            aladin.setFov(180);
-            aladin.setFrame('J2000');
-            aladin.gotoObject('LMC');
-            aladin.setOverlayImageLayer(HpxImageSurvey.getSurveyFromId('SMASH'));
-            aladin.getOverlayImageLayer('SMASH').setAlpha(0.5);
-            if ($('#displayMay').length == 1) {
-                $('#displayMay')[0].checked = 0;
-            }
-            if ($('#displayMell').length == 1) {
-                $('#displayMell')[0].checked = 0;
-            }
-            if ($('#displayDes').length == 1) {
-                $('#displayDes')[0].checked = 0;
-            }
-            if ($('#displaySmash').length == 1) {
-                $('#displaySmash')[0].checked = 1;
-            }
-            if ($('#displayMayCat').length == 1) {
-                $('#displayMayCat')[0].checked = 0;
-            }
-            if ($('#displaySmashCat').length == 1) {
-                $('#displaySmashCat')[0].checked = 0;
-            }
-            $('.smash-slider-control').show();
-            $('.may-slider-control').hide();
-            $('.des-slider-control').hide();
-            $('.slider-control').hide();
-            $("#smashSlider").slider('value', aladin.getOverlayImageLayer('SMASH').alpha * 100);
-            $("#smashOpacity").html("50%");
-            version = 'smash';
-            /*        $('.smash_version').show();
-             $('.des_version').hide();
-             $('.NOAO_exposure').hide();*/
-            aladin.view.catalogs =[];
-            $('.aladin-measurement-div').empty();
-            $('.aladin-measurement-div').hide();
-        });
-        $(".des_discovery").click(function () {
-            aladin.removeOverlayImageSurveys();
-            aladin.setBaseImageLayer('P/Mellinger/color');
-            aladin.getBaseImageLayer().getColorMap().update('native');
-            if ($('.aladin-cmSelection').length == 1) {
-                $('.aladin-cmSelection')[0].options.selectedIndex = 0;
-            }
-            aladin.setFov(180);
-            aladin.setFrame('J2000');
-            aladin.gotoObject('LMC');
-            aladin.setOverlayImageLayer(HpxImageSurvey.getSurveyFromId('DESDR1'));
-            aladin.getOverlayImageLayer('DESDR1').setAlpha(0.5);
-
-            if ($('#displayMay').length == 1) {
-                $('#displayMay')[0].checked = 0;
-            }
-            if ($('#displayMell').length == 1) {
-                $('#displayMell')[0].checked = 0;
-            }
-            if ($('#displayDes').length == 1) {
-                $('#displayDes')[0].checked = 1;
-            }
-            if ($('#displaySmash').length == 1) {
-                $('#displaySmash')[0].checked = 0;
-            }
-            if ($('#displayMayCat').length == 1) {
-                $('#displayMayCat')[0].checked = 0;
-            }
-            if ($('#displaySmashCat').length == 1) {
-                $('#displaySmashCat')[0].checked = 0;
-            }
-            $('.smash-slider-control').hide();
-            $('.may-slider-control').hide();
-            $('.des-slider-control').show();
-            $('.slider-control').hide();
-
-            $("#desSlider").slider('value', aladin.getOverlayImageLayer('DESDR1').alpha * 100);
-            $("#desOpacity").html("50%");
-            version = 'des';
-            /*   $('.des_version').show();
-             $('.smash_version').hide();
-             $('.NOAO_exposure').hide();*/
-            aladin.view.catalogs =[];
-            $('.aladin-measurement-div').empty();
-            $('.aladin-measurement-div').hide();
-        });
-    </script>
 </div>
 </body>
 </html>
