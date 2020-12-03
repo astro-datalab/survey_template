@@ -1,15 +1,16 @@
-1. Please use Firefox instead of Safari or Chrome to open this template.
-2. Use any editor to change the files and view the changes in Firebox.
+1. Open Chrome and install Web Server extension here: https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en
+2. Launch the app and choose the folder from your computer for the web server by clicking the button 'CHOOSE FOLDER'
+3. Use any editor to change the files and view the changes on http://127.0.0.1:8887/survey/index.php.
 3. Do not change the file names.
 4. Create a new branch using the survey name.
-5. The template contains six pages: 'index.html', 'access.html', 'analysis.html', 'explore.html', 'results.html', and 'acknowledgements.html'; each page have a corresponding folder with the same name. You only need to change the content page in the corresponding folder.
+5. The template contains six pages: 'index.php', 'access.php', 'analysis.php', 'explore.php', 'results.php', and 'acknowledgements.php'; each page have a corresponding folder with the same name. You only need to change the content page in the corresponding folder.
 6. If you don't want any of these five pages, just delete it from sidebar.html.
    (For example, if you don't want results page, just delete:
     "<section>
-        <h3><a href="results.html">Results</a></h3>
+        <h3><a href="results.php">Results</a></h3>
     </section>"
     from "sidebar.html" page.
-7. Within 'index.html' page, there are five sections: 'Description', 'Goals', 'Data Release', 'Data Reduction', 'table_1'. If you don't want any of these sections, for example, if you don't want 'Data Reduction', just delete:
+7. Within 'index.php' page, there are five sections: 'Description', 'Goals', 'Data Release', 'Data Reduction', 'table_1'. If you don't want any of these sections, for example, if you don't want 'Data Reduction', just delete:
 
     <div id="reduction">
     </div>

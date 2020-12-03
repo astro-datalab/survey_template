@@ -20,7 +20,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
     <!--  Load elements of the template page.
     -->
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         $(function () {
             $("#header").load("../inc/custom-header.inc");
@@ -41,6 +41,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <div class="row 200%">
                 <div class="3u 12u(narrower)">
                     <div id="sidebar">
+                        <?php
+                        include "sidebar.html";
+                        ?>
                     </div>
                 </div>
                 <div class="9u  12u(narrower) important(narrower)">
@@ -48,7 +51,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                         <!-- Content -->
 
-                       <div id="access_content"></div>
+                       <div id="access_content">
+                           <?php
+                           include "access/access_content.html";
+                           ?>
+                       </div>
                     </div>
                 </div>
             </div>
@@ -56,7 +63,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     </section>
     <div id="footer">
         <div class="container" id="footer-content">
-
+            <?php
+            include "../inc/custom-footer.inc";
+            ?>
         </div>
     </div>
 </div>

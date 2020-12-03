@@ -127,7 +127,7 @@
     });
     $(".des_discovery").click(function () {
         aladin.removeOverlayImageSurveys();
-        aladin.setBaseImageLayer('P/Mellinger/color');
+        aladin.setBaseImageLayer('DESDR1');
         aladin.getBaseImageLayer().getColorMap().update('native');
         if ($('.aladin-cmSelection').length == 1) {
             $('.aladin-cmSelection')[0].options.selectedIndex = 0;
@@ -136,14 +136,14 @@
         aladin.setFrame('J2000');
         aladin.gotoObject('30 -30');
 
-        $('.aladin-firstlayer')[0].value = 'DESDR1';
+        $('.aladin-firstlayer')[0].value = 'P/Mellinger/color';
         $('.aladin-secondlayer')[0].value = 'None';
         $('.aladin-thirdlayer')[0].value = 'None';
         $('.aladin-fourthlayer')[0].value = 'None';
         setFirstLayer();
         setFirstColor();
-        if (aladin.getOverlayImageLayer('DESDR1').getColorMap().reversed) {
-            aladin.getOverlayImageLayer('DESDR1').getColorMap().reverse();
+        if (aladin.getOverlayImageLayer('P/Mellinger/color').getColorMap().reversed) {
+            aladin.getOverlayImageLayer('P/Mellinger/color').getColorMap().reverse();
         }
         if ($('#displayMayCat').length == 1) {
             $('#displayMayCat')[0].checked = 0;
@@ -216,7 +216,7 @@
             aladin.addCatalog(aladin.createProgressiveCatalog('https://datalab.noao.edu/HiPS/noao_image_center/jan2018_imgcen/', 'J2000', 5, {
                 name: 'May16',
                 sourceSize: 8,
-                onClick: 'showTable',
+                onClick: 'showPopup',
                 color: 'red'
             }));
         }
@@ -229,7 +229,7 @@
             aladin.addCatalog(aladin.createProgressiveCatalog('https://datalab.noao.edu/HiPS/smash/allsky_rc_hipscat/', 'equatorial', 11, {
                 name: 'SmashCatalog',
                 sourceSize: 8,
-                onClick: 'showTable',
+                onClick: 'showPopup',
                 color: 'red'
             }));
         }
@@ -290,6 +290,7 @@
         updateColor();
     }
     function updateSurvey() {
+        $('.outside-baselayer .aladin-surveySelection').html('');
         var baseSurvey = aladin.getBaseImageLayer().id;
         var surveyList = HpxImageSurvey.getAvailableSurveys();
         for (var i = 0; i < surveyList.length; i++) {

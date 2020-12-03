@@ -20,31 +20,33 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
     <!--  Load elements of the template page.
     -->
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         $(function () {
             $("#header").load("../inc/custom-header.inc");
             $("#sidebar").load("sidebar.html");
-            $("#description").load("overview/description.html");
-            $("#table_1").load("overview/table_1.html");
-            $("#goals").load("overview/goals.html");
-            $("#release").load("overview/data_release.html");
-            $("#table_2").load("overview/table_2.html");
-            $("#reduction").load("overview/data_reduction.html");
+            $("#acknowledgements").load("acknowledgements/acknowledgements_content.html");
             $("#footer-content").load("../inc/custom-footer.inc");
         });
     </script>
+
+
 </head>
 <body id="survey">
 <div id="page-wrapper">
     <div id="header"></div>
-
+    <?php
+    include "../inc/custom-header.inc";
+    ?>
     <!-- Main -->
     <section class="wrapper style1">
         <div class="container">
             <div class="row 200%">
                 <div class="3u 12u(narrower)">
                     <div id="sidebar">
+                        <?php
+                        include "sidebar.html";
+                        ?>
                     </div>
                 </div>
                 <div class="9u  12u(narrower) important(narrower)">
@@ -52,31 +54,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                         <!-- Content -->
 
-                        <article>
-                            <img src="../img/delve_banner.jpg" width="100%">
-
-                            <div id="description">
-                            </div>
-
-                            <div id="table_1">
-                            </div>
-                            
-                            <div id="goals">
-                            </div>
-
-                            <div id="release">
-                            </div>
-
-                            <div id="table_2">
-                            </div>
-
-                            <div id="reduction">
-                            </div>
-
-                            <a href="#0" class="back-to-top">Back to Top</a>
-                            <br> <br>
-
-                        </article>
+                        <div id="acknowledgements">
+                            <?php
+                            include "acknowledgements/acknowledgements_content.html";
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,10 +66,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     </section>
     <div id="footer">
         <div class="container" id="footer-content">
-
+            <?php
+            include "../inc/custom-footer.inc";
+            ?>
         </div>
     </div>
-
 </div>
 <!-- Scripts -->
 <script src="../assets/js/jquery.min.js"></script>
