@@ -26,9 +26,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             $("#header").load("../inc/custom-header.inc");
             $("#sidebar").load("sidebar.html");
             $("#description").load("overview/description.html");
+            $("#table_1").load("overview/table_1.html");
             $("#goals").load("overview/goals.html");
             $("#release").load("overview/data_release.html");
-            $("#table_1").load("overview/table_1.html");
+            $("#table_2").load("overview/table_2.html");
             $("#reduction").load("overview/data_reduction.html");
             $("#footer-content").load("../inc/custom-footer.inc");
         });
@@ -63,11 +64,24 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 ?>
                             </div>
 
+                            <div id="table_1">
+                            </div>
+                            
+                            <div id="goals">
+                            </div>
+
                             <div id="release">
                                 <?php
                                 include "overview/data_release.html";
                                 ?>
                             </div>
+
+                            <div id="table_2">
+                            </div>
+
+                            <div id="reduction">
+                            </div>
+
                             <a href="#0" class="back-to-top">Back to Top</a>
                             <br> <br>
 
