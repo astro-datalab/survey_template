@@ -5,20 +5,20 @@
 <header>
     <h2>Data Reduction</h2>
 </header>
-
-Each subcomponent of DELVE uses slightly different data reduction pipelines.
+<p>
+Each subcomponent of DELVE uses slightly different data reduction pipelines. While DELVE DR1 comes solely from the WIDE survey, we provide brief descriptions of each pipeline below. A more detailed description of DELVE DR1 will come in a future publication.
 
 <ul>
     <li><b>DELVE-WIDE: </b>
       The DELVE WIDE data are processed with the DES Data Management (DESDM) pipeline (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>). 
-      SourceExtractor is used to create catalogs from the reduced ("FinalCut") images.
+      SourceExtractor is used to create catalogs from the reduced ("Final Cut") images.
       Astrometric calibration is performed against Gaia DR2 and photometric calibration is performed against ATLAS Refcat2 (<a href="https://arxiv.org/abs/1809.09157">Tonry et al. 2018</a>).
-      Currently, the best references for the DELVE-WIDE processing are: DESDM (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>), catalog creation (<a href="https://arxiv.org/abs/1508.03622">Drlica-Wagner et al. 2015</a>), calibration and validation (<a href="https://arxiv.org/abs/2009.08550">Cerny et al. 2020</a>)
+      Currently, the best references for the DELVE-WIDE processing are: DESDM (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>), catalog creation (<a href="https://arxiv.org/abs/1508.03622">Drlica-Wagner et al. 2015</a>), calibration and validation (<a href="https://arxiv.org/abs/2009.08550">Cerny et al. 2020</a>).
     </li>
     <li><b>DELVE-MC: </b>.
       The DELVE-MC images are reduced with the DECam Community Pipeline (<a href="https://ui.adsabs.harvard.edu/abs/2014ASPC..485..379V">Valdes et al. 2014</a>), which is based on an early versions of the DESDM pipeline.
       The DELVE-MC processing is performed using DELVERED, a modified version of the <code>DAOPhot</code>-based <a href="https://github.com/dnidever/PHOTRED">PHOTRED</a> (<a href="https://arxiv.org/abs/1701.00502">Nidever et al. 2017</a>), an automated and robust PSF photometry pipeline based on the DAOPHOT suite of programs (Stetson 1987, 1994).
-      Astrometric calibration is performed against Gaia DR2 and photometric calibration is performed against ATLAS Refcat2 (<a href="https://arxiv.org/abs/1809.09157"Tonry et al. 2018</a>).
+      Astrometric calibration is performed against Gaia DR2 and photometric calibration is performed against ATLAS Refcat2 (<a href="https://arxiv.org/abs/1809.09157">Tonry et al. 2018</a>).
       The best current reference for the DELVE-MC processing is <a href="https://arxiv.org/abs/1701.00502">Nidever et al. (2017)</a>.
     </li>
     <li><b>DELVE-DEEP: </b>.
@@ -27,3 +27,4 @@ Each subcomponent of DELVE uses slightly different data reduction pipelines.
     </li>
 </ul>
 
+</p>
