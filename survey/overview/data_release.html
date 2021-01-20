@@ -1,4 +1,3 @@
-
 <!--
 -->
 
@@ -6,11 +5,16 @@
 <header>
     <h2>Data Releases</h2>
 </header>
-<div class="dlpage">
 
-  <br>
-  DES DR2 data products will be available at Astro Data Lab from Jan 15, 2021. 
-  
+<header>
+    <h3>DES DR2</h3>
+</header>
+
+<p>
+Documentation for DES DR2 can be found in <a href="https://arxiv.org/abs/2101.05765">DES Collaboration (2021)</a>. DES DR2 data products will be available at Astro Data Lab from Jan 15, 2021. 
+</p>
+ 
+<div class="dlpage">
 <table border=1>
     <tr>
         <th colspan="2"><b>DES DR2 Summary</b></th>
@@ -36,8 +40,8 @@
         <td>~27 mas</td>
     </tr>
     <tr>
-        <td>Number of co-added image tiles / single-epoch images</td>
-        <td>10,169 / 76,217</td>
+        <td>Number of co-added image tiles / exposures</td>
+        <td>10,169 / 96,263</td>
     </tr>
     <tr>
         <td>Number of objects / galaxies / stellar sources</td>
@@ -107,36 +111,47 @@ des_dr2.x1p5__main__sdss_dr16__specobj
 Crossmatch of DES DR2 <i>main</i> table with SDSS DR16 <i>specobj</i> table; 1.5 arcsec matching radius, single-nearest match only
 </tr>
 </table>
+</div>
 
-<br>
+<header>
+    <h3>DES DR1</h3>
+</header>
+<p>
+Documentation on DES DR1 can be found in <a href="https://arxiv.org/abs/1801.03181">DES Collaboration (2018)</a>.
+</p>
   
+<div class="dlpage">
 <table border=1>
     <tr>
         <th colspan="2"><b>DES DR1 Summary</b></th>
     </tr>
     <tr>
         <td>Area covered</td>
-        <td>5000 deg<sup>2</sup></td>
+        <td>~5000 deg<sup>2</sup></td>
     </tr>
     <tr>
         <td>Bands</td>
         <td><i>grizY</i></td>
     </tr>
     <tr>
-        <td>Depth (10&sigma;, <i>grizY</i>)</td>
+        <td>Median catalog depth for 1.95 arcsec diameter aperture at S/N~10 in <i>grizY</i></td>
         <td>24.45, 24.3, 23.5, 22.90, 21.70 mag</td>
     </tr>
     <tr>
-        <td>Seeing (<i>grizY</i>)</td>
-        <td> ~1 arcsec</td>
+        <td>Median PSF FWHM in <i>grizY</i></td>
+        <td> 1.12, 0.96, 0.88, 0.84, 0.90 arcsec</td>
     </tr>
     <tr>
-        <td>Number of Tiles</td>
-        <td>10338</td>
+        <td>Median astrometric internal precision</td>
+        <td>~30 mas</td>
     </tr>
     <tr>
-        <td>Number of objects</td>
-        <td>399,263,026</td>
+        <td>Number of co-added image tiles</td>
+        <td>10,338</td>
+    </tr>
+    <tr>
+        <td>Number of objects / galaxies / stellar sources</td>
+        <td>399,263,026 / 310 million / 80 million </td>
     </tr>
 <!--    <tr>
         <td>Photometric precision</td>
@@ -160,6 +175,12 @@ Crossmatch of DES DR2 <i>main</i> table with SDSS DR16 <i>specobj</i> table; 1.5
 
 <tr>
 <td>
+            main   
+<td>
+Main object summary table
+</tr>
+<tr>
+<td>
       complement   
 <td>
 Secondary metadata
@@ -174,12 +195,6 @@ Exposure information
             hpix   
 <td>
 HEALPIX tile table
-<tr>
-<td>
-            main   
-<td>
-Main object summary table
-</tr>
 <tr>
 <td>
        neighbors   
@@ -248,5 +263,7 @@ SExtractor summary table
 </tr>
 </table>
 </div>
-To view the schema of any of these tables, use the <a href="../query.php">Query Tool</a>
 
+<p>
+To view the schema of any of these tables, use the <a href="../query.php">Query Tool</a>.
+</p>
